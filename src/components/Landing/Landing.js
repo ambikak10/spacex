@@ -41,12 +41,12 @@ class Landing extends Component {
           SpaceX Launch Programs
         </h2>
         <div className='row'>
-          <div className='col-lg-2 col-md-4 col-sm-12'>
+          <div className='col-lg-2 col-xl-2 col-md-4 col-sm-12'>
             <section className='selection-box'>
               <p style={{ marginLeft: "10px", fontWeight: "bold" }}>Filters</p>
               <p
                 style={{
-                  fontSize: "15px",
+                  fontSize: "12px",
                   textAlign: "center",
                   marginTop: "-10px",
                 }}
@@ -56,77 +56,77 @@ class Landing extends Component {
               </p>
               <div className='row'>
                 <div className='buttons'>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-xl-6 col-md-6 col-sm-6'>
                     <Link to='#' type='button' className='selected'>
                       2006
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
                     <Link to='#' type='button' className='selected'>
                       2007
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
                     <Link to='#' type='button' className='selected'>
                       2008
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
                     <Link to='#' type='button' className='selected'>
                       2009
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
                     <Link to='#' type='button' className='selected'>
                       2010
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
                     <Link to='#' type='button' className='selected'>
                       2011
                     </Link>{" "}
                   </div>{" "}
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
                     <Link to='#' type='button' className='selected'>
                       2012
                     </Link>
                   </div>{" "}
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
                     <Link to='#' type='button' className='selected'>
                       2013
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
                     <Link to='#' type='button' className='selected'>
                       2014
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
                     <Link to='#' type='button' className='selected'>
                       2015
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
                     <Link to='#' type='button' className='selected'>
                       2016
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
                     <Link to='#' type='button' className='selected'>
                       2017
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
                     <Link to='#' type='button' className='selected'>
                       2018
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-xl-6  col-md-6 col-sm-6'>
                     <Link to='#' type='button' className='selected'>
                       2019
                     </Link>
                   </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6'>
+                  <div className='col-lg-6 col-xl-6 col-md-6 col-sm-6'>
                     <Link to='#' type='button' className='selected'>
                       2020
                     </Link>
@@ -136,7 +136,7 @@ class Landing extends Component {
 
               <p
                 style={{
-                  fontSize: "15px",
+                  fontSize: "12px",
                   textAlign: "center",
                   marginTop: "-10px",
                   clear: "both",
@@ -148,7 +148,7 @@ class Landing extends Component {
               <div className='row'>
                 <div className='buttons'>
                   <div
-                    className='col-lg-6 col-md-6 col-sm-6'
+                    className='col-lg-6 col-xl-6 col-md-6 col-sm-6'
                     style={{ marginTop: "-5px" }}
                   >
                     <Link to='#' type='button' className='selected'>
@@ -156,7 +156,7 @@ class Landing extends Component {
                     </Link>
                   </div>
                   <div
-                    className='col-lg-6 col-md-6 col-sm-6'
+                    className='col-lg-6 col-xl-6 col-md-6 col-sm-6'
                     style={{ marginTop: "-5px", marginBottom: "5px" }}
                   >
                     <Link to='#' type='button' className='selected'>
@@ -167,7 +167,7 @@ class Landing extends Component {
               </div>
               <p
                 style={{
-                  fontSize: "15px",
+                  fontSize: "12px",
                   textAlign: "center",
                   marginTop: "20px",
                 }}
@@ -178,7 +178,7 @@ class Landing extends Component {
               <div className='row'>
                 <div className='buttons'>
                   <div
-                    className='col-lg-6 col-md-6 col-sm-6'
+                    className='col-lg-6 col-xl-6 col-md-6 col-sm-6'
                     style={{ marginTop: "-5px" }}
                   >
                     <Link to='#' type='button' className='selected'>
@@ -186,7 +186,7 @@ class Landing extends Component {
                     </Link>
                   </div>
                   <div
-                    className='col-lg-6 col-md-6 col-sm-6'
+                    className='col-lg-6 col-xl-6 col-md-6 col-sm-6'
                     style={{ marginTop: "-5px" }}
                   >
                     <Link to='#' type='button' className='selected'>
