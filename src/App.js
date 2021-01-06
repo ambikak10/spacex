@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import Landing from "./components/Landing/Landing";
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path='/' component={Landing} />
         </Router>
       </div>
+      <Footer />
     </Provider>
   );
 }

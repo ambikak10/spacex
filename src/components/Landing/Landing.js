@@ -28,8 +28,8 @@ class Landing extends Component {
             name={firstlandProgram.mission_name}
             missionid={firstlandProgram.mission_id}
             launchyear={firstlandProgram.launch_year}
-            successfullaunch={firstlandProgram.launch_success}
-            successfullanding={firstlandProgram.land_success}
+            launch={firstlandProgram.launch_success}
+           land={firstlandProgram.rocket.first_stage.cores[0].land_success}
           />
         </div>
       ));

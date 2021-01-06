@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { successfulLaunch } from '../../actions/actions';
 import './landing.css'
 
 class singleProgram extends Component {
@@ -8,10 +9,11 @@ class singleProgram extends Component {
       name,
       missionid,
       launchyear,
-      successfullaunch,
-      successfullanding,
+      launch,
+      land,
     } = this.props;
-    console.log(successfullanding);
+    console.log(land);
+    console.log(launch);
     return (
       <Fragment>
         <section className='program-card'>
@@ -21,13 +23,12 @@ class singleProgram extends Component {
               <img className='mission-patch' src={img} />
             </div>
           </div>
-          {/* <br/> <br/> */}
           <h4 id='mission-name'>{name}</h4>
           {missionid && missionid.length > 0 ? (
             missionid.map((id) => (
               <Fragment>
                 {" "}
-                <h5 id='details'>Mission Ids: </h5>
+                <h5 id='details'>Mission Ids: NA </h5>
                 <ul>
                   <li style={{ marginTop: "-15px", fontSize: "15px" }}>
                     {missionid}
@@ -39,9 +40,19 @@ class singleProgram extends Component {
             <h5 id='details'>Mission Ids: </h5>
           )}
           <h5 id='details'>Launch year: {launchyear}</h5>
-          {successfullaunch
-          && <h5 id='details'>Successful Launch: {successfullaunch}</h5>}
-          <h5 id='details'>Successful Landing: {successfullanding}</h5>
+          {launch === null ? (
+            <h5 id='details'>Successful Launch: NA </h5>
+          ) : (
+            <h5 id='details'>Successful Launch: {launch.toString()}</h5>
+          )}
+
+          {land === null ? (
+            <h5 id='details'>Successful Landing: NA </h5>
+          ) : (
+            <h5 id='details'>Successful Landing: {land.toString()}</h5>
+          )}
+          {/* <h5 id='details'>Successful Launch: {successfullaunch} </h5>
+          <h5 id='details'>Successful Landing: {successfulland} </h5> */}
         </section>
       </Fragment>
     );
