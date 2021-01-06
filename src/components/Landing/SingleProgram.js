@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react'
-import { successfulLaunch } from '../../actions/actions';
 import './landing.css'
 
 class singleProgram extends Component {
@@ -12,8 +11,7 @@ class singleProgram extends Component {
       launch,
       land,
     } = this.props;
-    console.log(land);
-    console.log(launch);
+  
     return (
       <Fragment>
         <section className='program-card'>
@@ -24,7 +22,9 @@ class singleProgram extends Component {
             </div>
           </div>
           <h4 id='mission-name'>{name}</h4>
-          <h5 id='details'>Mission Ids: </h5>
+          <span>
+            <b id='details'>Mission Ids:</b>
+          </span>
           {missionid && missionid.length > 0 ? (
             missionid.map((id) => (
               <Fragment>
@@ -37,9 +37,6 @@ class singleProgram extends Component {
           ) : (
             <Fragment>
               {" "}
-              <span>
-                <b id='details'>Mission Ids:</b>
-              </span>
               <span style={{ marginLeft: "-10px", fontSize: "0.83em" }}>
                 NA
               </span>
@@ -67,7 +64,8 @@ class singleProgram extends Component {
             </div>
           ) : (
             <div id='details'>
-              <b>Successful Landing:</b><span style={{marginLeft:"5px"}}>{land.toString()}</span>
+              <b>Successful Landing:</b>
+              <span style={{ marginLeft: "5px" }}>{land.toString()}</span>
             </div>
           )}
         </section>

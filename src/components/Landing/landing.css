@@ -149,6 +149,7 @@ a {
   margin-top: 60px;
   color: #0645ad;
   margin-left:18px;
+  margin-bottom: 14px;
  }
   #details {
   margin: 18px;
@@ -220,7 +221,7 @@ a {
   }
   .program-card {
   width: 200px;
-  height: 440px;
+  height: 420px;
   background-color: white;
   margin-left: 90px;
   border-radius: 5px;
@@ -229,17 +230,26 @@ a {
   margin-right: 90px;
 }
  #mission-name {
-  margin-top: 60px;
+  margin-top: 20px;
   color: #0645ad;
   margin-left:18px;
+  margin-bottom: 14px;
  }
  #details {
   margin: 18px;
   font-size: 0.83em;
 }
+.mission-patch-box {
+  height: 190px;
+  width: 170px;
+  padding-top:5px;
+  padding-left:-5px;
+  padding-right:-5px;
+  margin-left: auto;
+  margin-right:auto;
+}
 }
 /************Tablet View***********/
-
 @media (min-width: 700px) and (max-width: 1024px) {
   .col-md-1,
   .col-md-2,
@@ -304,7 +314,7 @@ a {
   }
   .program-card{
   width: 240px;
-  height: 400px;
+  height: 480px;
   background-color: white;
   border-radius: 5px;
   margin-top: -15px;
@@ -314,7 +324,21 @@ a {
   margin-top: 60px;
   color: #0645ad;
   margin-left:18px;
+  margin-bottom: 14px;
  }
+  #details {
+  margin: 18px;
+  font-size: 0.83em;
+ }
+.mission-patch-box {
+  height: 190px;
+  width: 200px;
+  padding-top:5px;
+  padding-left:-5px;
+  padding-right:-5px;
+  margin-left: auto;
+  margin-right:auto;
+}
 }
 
 /***********Mobile devices*********/
@@ -386,20 +410,21 @@ a {
   }
   .program-card{
   width: 230px;
-  height: 480px;
+  height: 420px;
   background-color: white;
   margin-left:auto;
   margin-right:auto;
   border-radius: 5px;
   margin-top: 25px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  text-align: left;
   }
   .buttons{
     margin-left: 8px
   }
   .selection-box {
   width: 230px;
-  height: 480px;
+  height: 420px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
@@ -410,5 +435,24 @@ a {
   margin-top: 60px;
   color: #0645ad;
   margin-left:18px;
+ }
+  #details {
+  margin: 18px;
+  font-size: 0.83em;
+ }
+ .mission-patch-box {
+  height: 190px;
+  width: 190px;
+  padding-top:5px;
+  padding-left:-5px;
+  padding-right:-5px;
+  margin-left: auto;
+  margin-right:auto;
+}
+  #mission-name {
+  margin-top: 30px;
+  color: #0645ad;
+  margin-left:18px;
+  margin-bottom: 14px;
  }
 }
