@@ -12,7 +12,7 @@
   background-color: white;
   margin-left: 10px;
   border-radius: 5px;
-  margin-top: -10px;
+  margin-top: -30px;
 }
 hr {
   height: 1px;
@@ -55,6 +55,24 @@ a {
 .buttons {
   margin-left: 35px;
   margin-top: -5px;
+}
+.mission-patch {
+  max-width:100%;
+  max-height:100%;
+  background-color: #ececec;
+  margin-top:15px;
+  margin-bottom:15px;
+  margin-left: auto;
+  margin-right:auto;
+}
+.mission-patch-box {
+  height: 190px;
+  width: 220px;
+  padding-top:5px;
+  padding-left:-5px;
+  padding-right:-5px;
+  margin-left: auto;
+  margin-right:auto;
 }
 /*********Large devices*********/
 @media (min-width: 1440px){
@@ -120,7 +138,7 @@ a {
   }
   .program-card {
   width: 260px;
-  height: 420px;
+  height: 440px;
   background-color: white;
   margin-left: 10px;
   border-radius: 5px;
@@ -340,10 +358,6 @@ a {
   .col-sm-12 {
     width: 100%;
     text-align: center;
-  }
-
-  .selection-box {
- 
   }
   h2{
   text-align: center;

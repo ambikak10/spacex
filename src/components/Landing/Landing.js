@@ -23,7 +23,7 @@ class Landing extends Component {
       content = firstlandPrograms.map((firstlandProgram) => (
         <div className='col-lg-3 col-md-6 col-xl-3 col-sm-12'>
           <SingleProgram
-            img={firstlandProgram.mission_patch}
+            img={firstlandProgram.links.mission_patch_small}
             key={firstlandProgram.flight_number}
             name={firstlandProgram.mission_name}
             missionid={firstlandProgram.mission_id}

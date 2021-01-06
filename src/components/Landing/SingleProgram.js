@@ -11,14 +11,19 @@ class singleProgram extends Component {
       successfullaunch,
       successfullanding,
     } = this.props;
-    console.log(name)
+    console.log(successfullanding);
     return (
       <Fragment>
         <section className='program-card'>
-          
-            <img src={img} />
-            {name}
-         
+          <div className='mission-patch-box'>
+            <div>
+              {" "}
+              <img className='mission-patch' src={img} />
+            </div>
+          </div>
+          <section>
+            <p>{name}</p>
+          </section>
         </section>
       </Fragment>
     );
