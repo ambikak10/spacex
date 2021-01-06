@@ -24,35 +24,52 @@ class singleProgram extends Component {
             </div>
           </div>
           <h4 id='mission-name'>{name}</h4>
+          <h5 id='details'>Mission Ids: </h5>
           {missionid && missionid.length > 0 ? (
             missionid.map((id) => (
               <Fragment>
                 {" "}
-                <h5 id='details'>Mission Ids: NA </h5>
                 <ul>
-                  <li style={{ marginTop: "-15px", fontSize: "15px" }}>
-                    {missionid}
-                  </li>
+                  <li style={{ marginTop: "-15px", fontSize: "15px" }}>{id}</li>
                 </ul>
               </Fragment>
             ))
           ) : (
-            <h5 id='details'>Mission Ids: </h5>
+            <Fragment>
+              {" "}
+              <span>
+                <b id='details'>Mission Ids:</b>
+              </span>
+              <span style={{ marginLeft: "-10px", fontSize: "0.83em" }}>
+                NA
+              </span>
+            </Fragment>
           )}
-          <h5 id='details'>Launch year: {launchyear}</h5>
+          <Fragment>
+            {" "}
+            <div id='details'>
+              <b>Launch Year:</b> <span>{launchyear}</span>
+            </div>
+          </Fragment>
           {launch === null ? (
-            <h5 id='details'>Successful Launch: NA </h5>
+            <div id='details'>
+              <b>Successful Launch:</b> <span>NA</span>
+            </div>
           ) : (
-            <h5 id='details'>Successful Launch: {launch.toString()}</h5>
+            <div id='details'>
+              <b>Successful Launch:</b> <span>{launch.toString()}</span>
+            </div>
           )}
 
           {land === null ? (
-            <h5 id='details'>Successful Landing: NA </h5>
+            <div id='details'>
+              <b>Successful Landing:</b> <span>NA</span>
+            </div>
           ) : (
-            <h5 id='details'>Successful Landing: {land.toString()}</h5>
+            <div id='details'>
+              <b>Successful Landing:</b><span style={{marginLeft:"5px"}}>{land.toString()}</span>
+            </div>
           )}
-          {/* <h5 id='details'>Successful Launch: {successfullaunch} </h5>
-          <h5 id='details'>Successful Landing: {successfulland} </h5> */}
         </section>
       </Fragment>
     );
