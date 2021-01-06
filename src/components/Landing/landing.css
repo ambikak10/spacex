@@ -152,6 +152,8 @@ a {
  }
   #details {
   margin: 18px;
+  font-size: 0.83em;
+  /* display: block; */
  }
 }
 
@@ -234,6 +236,7 @@ a {
  }
  #details {
   margin: 18px;
+  font-size: 0.83em;
 }
 }
 /************Tablet View***********/
