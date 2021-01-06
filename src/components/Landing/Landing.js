@@ -8,18 +8,45 @@ import SingleProgram from "./SingleProgram";
 class Landing extends Component {
   constructor() {
     super();
+    this.state = {
+      componentUpdate: false,
+      img: null,
+      name: null,
+      missionid: null,
+      launchyear: null,
+      launch: null,
+      land: null,
+      value1: '', //launch boolean value
+      value2: ''  //land boolena value
+    };
   }
   componentDidMount = () => {
     this.props.landingPage();
   };
+
+  componentDidUpdate(prevProps) {
+    if (this.props.userID !== prevProps.userID) {
+      this.fetchData(this.props.userID);
+    }
+  }
+  launchYear = (year) => {
+    console.log(year)
+    this.setState({
+     launchyear: year
+    })
+  };
   render() {
     let content;
+    let yearInfo;
+    let years;
+    let uniqueYears;
     const { firstlandPrograms } = this.props.firstLanding;
-    // if (firstlandPrograms && firstlandPrograms.length > 0) {
-    //   console.log(firstlandPrograms[0]);
-    // }
 
-    if (firstlandPrograms !== null && firstlandPrograms.length > 0) {
+    if (
+      firstlandPrograms !== null &&
+      firstlandPrograms.length > 0 &&
+      this.state.componentUpdate === false
+    ) {
       content = firstlandPrograms.map((firstlandProgram) => (
         <div className='col-lg-3 col-md-6 col-xl-3 col-sm-12'>
           <SingleProgram
@@ -29,12 +56,35 @@ class Landing extends Component {
             missionid={firstlandProgram.mission_id}
             launchyear={firstlandProgram.launch_year}
             launch={firstlandProgram.launch_success}
-           land={firstlandProgram.rocket.first_stage.cores[0].land_success}
+            land={firstlandProgram.rocket.first_stage.cores[0].land_success}
           />
         </div>
       ));
-    }
+    } else {
 
+    }
+    if(firstlandPrograms !== null && firstlandPrograms.length > 0){
+     years = firstlandPrograms.map(firstlandProgram => {
+      return firstlandProgram.launch_year
+     });
+     uniqueYears = years.filter((year, index) =>{
+        return years.indexOf(year) == index;
+     })
+    
+     yearInfo = uniqueYears.map((year) => 
+       <div className='col-lg-6 col-xl-6 col-md-6 col-sm-6'>
+         <Link
+           to='#'
+           type='button'
+           onClick={() => this.launchYear(year)}
+           className='selected'
+         >
+           {year}
+         </Link>
+       </div>
+     )
+     //console.log(uniqueYears);
+    }       
     return (
       <Fragment>
         <h2 style={{ marginLeft: "10px", marginTop: "0px" }}>
@@ -56,83 +106,80 @@ class Landing extends Component {
               </p>
               <div className='row'>
                 <div className='buttons'>
-                  <div className='col-lg-6 col-xl-6 col-md-6 col-sm-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2006
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2007
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2008
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2009
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2010
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2011
-                    </Link>{" "}
-                  </div>{" "}
-                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2012
-                    </Link>
-                  </div>{" "}
-                  <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2013
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2014
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2015
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2016
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2017
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2018
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-xl-6  col-md-6 col-sm-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2019
-                    </Link>
-                  </div>
-                  <div className='col-lg-6 col-xl-6 col-md-6 col-sm-6'>
-                    <Link to='#' type='button' className='selected'>
-                      2020
-                    </Link>
-                  </div>
+                  {yearInfo}
                 </div>
               </div>
+
+              {/* // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2007
+                  //   </Link>
+                  // </div>
+                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2008
+                  //   </Link>
+                  // </div>
+                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2009
+                  //   </Link>
+                  // </div>
+                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2010
+                  //   </Link>
+                  // </div>
+                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2011
+                  //   </Link>{" "}
+                  // </div>{" "}
+                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2012
+                  //   </Link>
+                  // </div>{" "}
+                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2013
+                  //   </Link>
+                  // </div>
+                  // <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2014
+                  //   </Link>
+                  // </div>
+                  // <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2015
+                  //   </Link>
+                  // </div>
+                  // <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2016
+                  //   </Link>
+                  // </div>
+                  // <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2017
+                  //   </Link>
+                  // </div>
+                  // <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2018
+                  //   </Link>
+                  // </div>
+                  // <div className='col-lg-6 col-xl-6  col-md-6 col-sm-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2019
+                  //   </Link>
+                  // </div>
+                  // <div className='col-lg-6 col-xl-6 col-md-6 col-sm-6'>
+                  //   <Link to='#' type='button' className='selected'>
+                  //     2020
+                  //   </Link>
+                  // </div> */}
 
               <p
                 style={{

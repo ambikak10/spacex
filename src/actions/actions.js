@@ -3,7 +3,6 @@ import axios from "axios";
 
 //get programs for landing page
  export const landingPage =  () => (dispatch) => {
-   console.log("called")
    axios
      .get("https://api.spaceXdata.com/v3/launches?limit=100")
      .then((res) => {
@@ -35,13 +34,13 @@ import axios from "axios";
        }).catch((err) =>
          dispatch({
            type: GET_LAUNCH,
-           payload: [],
+           payload: null,
          })
        )
      );
  };
 
-//get programs for successful land
+//get programs for successful launch and land
  export const successfulLaunchLand = (value1, value2) => (dispatch) => {
    axios
      .get(
@@ -54,11 +53,28 @@ import axios from "axios";
        }).catch((err) =>
          dispatch({
            type: GET_LAUNCH_LAND,
-           payload: [],
+           payload: null,
          })
        )
      );
  };
 
 
-//get programs for both successful lsunch and land
+//get programs for all filters
+ export const all = (value1, value2, year) => (dispatch) => {
+   axios
+     .get(
+       `https://api.spaceXdata.com/v3/launches?limit=100&launch_success=${value1}&land_success=${value2}&launch_year=${year}`
+     )
+     .then((res) =>
+       dispatch({
+         type: GET_ALL,
+         payload: res.data,
+       }).catch((err) =>
+         dispatch({
+           type: GET_ALL,
+           payload: null,
+         })
+       )
+     );
+ };
