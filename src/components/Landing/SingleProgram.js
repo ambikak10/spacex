@@ -21,9 +21,27 @@ class singleProgram extends Component {
               <img className='mission-patch' src={img} />
             </div>
           </div>
-          <section>
-            <p>{name}</p>
-          </section>
+          {/* <br/> <br/> */}
+          <h4 id='mission-name'>{name}</h4>
+          {missionid && missionid.length > 0 ? (
+            missionid.map((id) => (
+              <Fragment>
+                {" "}
+                <h5 id='details'>Mission Ids: </h5>
+                <ul>
+                  <li style={{ marginTop: "-15px", fontSize: "15px" }}>
+                    {missionid}
+                  </li>
+                </ul>
+              </Fragment>
+            ))
+          ) : (
+            <h5 id='details'>Mission Ids: </h5>
+          )}
+          <h5 id='details'>Launch year: {launchyear}</h5>
+          {successfullaunch
+          && <h5 id='details'>Successful Launch: {successfullaunch}</h5>}
+          <h5 id='details'>Successful Landing: {successfullanding}</h5>
         </section>
       </Fragment>
     );

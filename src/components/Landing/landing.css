@@ -138,13 +138,21 @@ a {
   }
   .program-card {
   width: 260px;
-  height: 440px;
+  height: 480px;
   background-color: white;
   margin-left: 10px;
   border-radius: 5px;
   margin-top: -15px;
   margin-bottom: 30px;
 }
+ #mission-name {
+  margin-top: 60px;
+  color: #0645ad;
+  margin-left:18px;
+ }
+  #details {
+  margin: 18px;
+ }
 }
 
 /***********Desktop devices*********/
@@ -219,8 +227,15 @@ a {
   margin-bottom: 30px;
   margin-right: 90px;
 }
+ #mission-name {
+  margin-top: 60px;
+  color: #0645ad;
+  margin-left:18px;
+ }
+ #details {
+  margin: 18px;
 }
-
+}
 /************Tablet View***********/
 
 @media (min-width: 700px) and (max-width: 1024px) {
@@ -293,6 +308,11 @@ a {
   margin-top: -15px;
   margin-bottom: 30px;
   }
+   #mission-name {
+  margin-top: 60px;
+  color: #0645ad;
+  margin-left:18px;
+ }
 }
 
 /***********Mobile devices*********/
@@ -364,7 +384,7 @@ a {
   }
   .program-card{
   width: 230px;
-  height: 440px;
+  height: 480px;
   background-color: white;
   margin-left:auto;
   margin-right:auto;
@@ -377,11 +397,16 @@ a {
   }
   .selection-box {
   width: 230px;
-  height: 440px;
+  height: 480px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
   margin-top: -10px;
 }
+ #mission-name {
+  margin-top: 60px;
+  color: #0645ad;
+  margin-left:18px;
+ }
 }
