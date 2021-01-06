@@ -4,6 +4,7 @@
 
 .row {
   width: 100%;
+  position: relative;
 }
 .selection-box {
   width: 200px;
@@ -342,17 +343,17 @@ a {
   }
 
   .selection-box {
-  margin: auto;
-  display: block;
+ 
   }
   h2{
   text-align: center;
   }
   .program-card{
-  width: 220px;
-  height: 380px;
+  width: 230px;
+  height: 440px;
   background-color: white;
-  margin-left: 10px;
+  margin-left:auto;
+  margin-right:auto;
   border-radius: 5px;
   margin-top: 25px;
   margin-bottom: 10px
@@ -360,4 +361,13 @@ a {
   .buttons{
     margin-left: 8px
   }
+  .selection-box {
+  width: 230px;
+  height: 440px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  margin-top: -10px;
+}
 }
