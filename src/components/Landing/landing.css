@@ -55,18 +55,81 @@ a {
   margin-left: 20px;
   margin-top: -5px;
 }
-.program-card {
-  width: 200px;
-  height: 280px;
+/*********Large devices*********/
+@media (min-width: 1440px){
+  .col-xl-1,
+  .col-xl-2,
+  .col-xl-3,
+  .col-xl-4,
+  .col-xl-5,
+  .col-xl-6,
+  .col-xl-7,
+  .col-xl-8,
+  .col-xl-9,
+  .col-xl-10,
+  .col-xl-11,
+  .col-xl-12 {
+    float: left;
+  }
+  .col-xl-1 {
+    width: 8.33%;
+  }
+
+  .col-xl-2 {
+    width: 16.66%;
+  }
+
+  .col-xl-3 {
+    width: 25%;
+  }
+
+  .col-xl-4 {
+    width: 33%;
+  }
+
+  .col-xl-5 {
+    width: 41.66%;
+  }
+
+  .col-xl-6 {
+    width: 50%;
+  }
+
+  .col-xl-7 {
+    width: 58.33%;
+  }
+  .col-xl-8 {
+    width: 66.66%;
+  }
+
+  .col-xl-9 {
+    width: 74.99%;
+  }
+
+  .col-xl-10 {
+    width: 83.33%;
+  }
+
+  .col-xl-11 {
+    width: 91.66%;
+  }
+
+  .col-xl-12 {
+    width: 100%;
+  }
+  .program-card {
+  width: 280px;
+  height: 440px;
   background-color: white;
   margin-left: 10px;
   border-radius: 5px;
   margin-top: -15px;
   margin-bottom: 30px;
 }
+}
 
 /***********Desktop devices*********/
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1440px){
   .col-lg-1,
   .col-lg-2,
   .col-lg-3,
@@ -127,6 +190,15 @@ a {
   .col-lg-12 {
     width: 100%;
   }
+  .program-card {
+  width: 250px;
+  height: 440px;
+  background-color: white;
+  margin-left: 10px;
+  border-radius: 5px;
+  margin-top: -15px;
+  margin-bottom: 30px;
+}
 }
 
 /************Tablet View***********/
@@ -192,6 +264,14 @@ a {
 
   .col-md-12 {
     width: 100%;
+  }
+  .program-card{
+  width: 240px;
+  height: 400px;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: -15px;
+  margin-bottom: 30px;
   }
 }
 
@@ -263,9 +343,17 @@ a {
   .selection-box {
   margin: auto;
   display: block;
- 
   }
   h2{
   text-align: center;
+  }
+  .program-card{
+  width: 220px;
+  height: 380px;
+  background-color: white;
+  margin-left: 10px;
+  border-radius: 5px;
+  margin-top: 25px;
+  margin-bottom: 10px
   }
 }

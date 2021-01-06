@@ -21,7 +21,7 @@ class Landing extends Component {
 
     if (firstlandPrograms !== null && firstlandPrograms.length > 0) {
       content = firstlandPrograms.map((firstlandProgram) => (
-        <div className='col-lg-3 col-md-6 col-sm-12'>
+        <div className='col-lg-3 col-md-6 col-xl-3 col-sm-12'>
           <SingleProgram
             img={firstlandProgram.mission_patch}
             key={firstlandProgram.flight_number}
@@ -197,7 +197,7 @@ class Landing extends Component {
               </div>
             </section>
           </div>
-          <div className='col-lg-10 col-md-8 col-sm-12'>
+          <div className='col-lg-10 col-xl-10 col-md-8 col-sm-12'>
             <div className='row'>{content}</div>
           </div>
         </div>

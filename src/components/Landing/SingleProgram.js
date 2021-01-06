@@ -14,10 +14,12 @@ class singleProgram extends Component {
     console.log(name)
     return (
       <Fragment>
-        <div className="program-card">
-          <img src={img} />
-          {name}
-        </div>
+        <section className='program-card'>
+          
+            <img src={img} />
+            {name}
+         
+        </section>
       </Fragment>
     );
   }
