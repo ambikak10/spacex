@@ -8,7 +8,7 @@
 }
 .selection-box {
   width: 200px;
-  height: 480px;
+  height: 500px;
   background-color: white;
   margin-left: 10px;
   border-radius: 5px;
@@ -436,7 +436,7 @@ button {
   }
   .selection-box {
   width: 230px;
-  height: 420px;
+  height: 480px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;

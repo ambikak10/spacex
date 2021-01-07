@@ -433,7 +433,7 @@ class Landing extends Component {
                 style={{
                   fontSize: "12px",
                   textAlign: "center",
-                  marginTop: "20px",
+                  marginTop: "10px",
                 }}
               >
                 Successful Landing
