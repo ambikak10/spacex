@@ -10,12 +10,12 @@ class Landing extends Component {
     super();
     this.state = {
       activeYear: false,
-      img: null,
-      name: null,
-      missionid: null,
-      launchyear: null,
-      launch: null,
-      land: null,
+      // img: null,
+      // name: null,
+      // missionid: null,
+      // launchyear: null,
+      // launch: null,
+      // land: null,
       value1: null, //launch boolean value
       value2: null, //land boolena value
       activeLaunchtrue: false,
@@ -24,12 +24,13 @@ class Landing extends Component {
       activeLandfalse: false,
       activeClass: null
     };
+    this.onFilter = this.onFilter.bind(this);
   }
-  componentDidMount = () => {
+  componentDidMount(){
     this.props.landingPage();
-  };
+  }
 
-  onFilter = (year, value1, value2, i) => {
+  onFilter (year, value1, value2, i) {
     var params = "";
 
     if (
