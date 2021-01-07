@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Landing from "./components/Landing/Landing";
 import Footer from './components/Footer/Footer'
+// import FilteredPrograms  from './components/FilteredPrograms/FilteredPrograms'
 
 function App() {
   return (
@@ -12,6 +13,21 @@ function App() {
       <div className='App-header'>
         <Router>
           <Route exact path='/' component={Landing} />
+          {/* <Route exact path='/programs/:year' component={FilteredPrograms} />
+          <Route
+            exact
+            path='/programs/launch/:launch'
+            component={FilteredPrograms}
+          />
+          <Route
+            exact
+            path='/programs/launchland/:launch/:land'
+            component={FilteredPrograms}
+          /> */}
+          <Route
+            exact
+            path='/programs/:year?/:launch?/:land?' component = {Landing} />
+           
         </Router>
       </div>
       <Footer />

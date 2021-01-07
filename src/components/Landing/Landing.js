@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { landingPage } from "../../actions/actions";
+import { landingPage, filter } from "../../actions/actions";
 import "./landing.css";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -9,44 +9,130 @@ class Landing extends Component {
   constructor() {
     super();
     this.state = {
-      componentUpdate: false,
+      filterApplied:false,
       img: null,
       name: null,
       missionid: null,
       launchyear: null,
       launch: null,
       land: null,
-      value1: '', //launch boolean value
-      value2: ''  //land boolena value
+      value1: null, //launch boolean value
+      value2: null, //land boolena value
     };
   }
   componentDidMount = () => {
+    console.log('evertime')
     this.props.landingPage();
   };
+//  static getDerivedStateFromProps(props, state){
+//      props.filter(state.launchyear, state.value1, state.value2);
+//  }
+  onFilter = (year, value1, value2) => {
+    //console.log(year);
+    var params = "";
+    if (year !== null) {
+      //console.log('year clicked')
+      this.setState(
+        {
+          launchyear: year,
+          filterApplied: true
+        }, ()=>{
+          console.log('callback')
+        
+          if (this.state.launchyear !== null) {
+            console.log(this.state.launchyear);
+            params = params + "year=" + this.state.launchyear;
+          }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.userID !== prevProps.userID) {
-      this.fetchData(this.props.userID);
+          if (this.state.value1 !== null) {
+            console.log(this.state.value1);
+            params = params + "launch=" + this.state.value1;
+          }
+          if (this.state.value2 !== null) {
+            console.log(this.state.value2);
+            params = params + "land=" + this.state.value2;
+          }
+             window.history.replaceState(null, null, `/programs/${params}`);
+             this.props.filter(
+               this.state.launchyear,
+               this.state.value1,
+               this.state.value2
+             );
+        }
+      );
     }
+    if (value1 !== null) {
+      this.setState(
+        {
+          value1: value1,
+          filterApplied: true,
+        },
+        () => {
+          //console.log(this.state.value1);
+          if (this.state.launchyear !== null) {
+            console.log(this.state.launchyear);
+            params = params + "year=" + this.state.launchyear;
+          }
+
+          if (this.state.value1 !== null) {
+            console.log(this.state.value1);
+            params = params + "launch=" + this.state.value1;
+          }
+          if (this.state.value2 !== null) {
+            console.log(this.state.value2);
+            params = params + "land=" + this.state.value2;
+          }
+          window.history.replaceState(null, null, `/programs/${params}`);
+          this.props.filter(
+            this.state.launchyear,
+            this.state.value1,
+            this.state.value2
+          );
+        }
+      );
+    }
+    if (value2 !== null) {
+      this.setState(
+        {
+          value2: value2,
+          filterApplied: true,
+        },
+        () => {
+          if (this.state.launchyear !== null) {
+            console.log(this.state.launchyear);
+            params = params + "year=" + this.state.launchyear;
+          }
+
+          if (this.state.value1 !== null) {
+            console.log(this.state.value1);
+            params = params + "launch=" + this.state.value1;
+          }
+          if (this.state.value2 !== null) {
+            console.log(this.state.value2);
+            params = params + "land=" + this.state.value2;
+          }
+          window.history.replaceState(null, null, `/programs/${params}`);
+          this.props.filter(
+            this.state.launchyear,
+            this.state.value1,
+            this.state.value2
+          );
+        }
+      );
+    }
+    //  this.props.filter(this.state.launchyear, this.state.value1, this.state.value2);
   }
-  launchYear = (year) => {
-    console.log(year)
-    this.setState({
-     launchyear: year
-    })
-  };
   render() {
+    console.log('render')
     let content;
     let yearInfo;
     let years;
     let uniqueYears;
     const { firstlandPrograms } = this.props.firstLanding;
-
-    if (
-      firstlandPrograms !== null &&
-      firstlandPrograms.length > 0 &&
-      this.state.componentUpdate === false
-    ) {
+    const { filteredPrograms } = this.props.firstLanding;
+    
+    if (filteredPrograms === null){
+    if (firstlandPrograms !== null && firstlandPrograms.length > 0) {
       content = firstlandPrograms.map((firstlandProgram) => (
         <div className='col-lg-3 col-md-6 col-xl-3 col-sm-12'>
           <SingleProgram
@@ -60,31 +146,43 @@ class Landing extends Component {
           />
         </div>
       ));
-    } else {
-
+    }} else {
+      if (filteredPrograms !== null && filteredPrograms.length > 0){
+        content = filteredPrograms.map((filteredProgram) => (
+          <div className='col-lg-3 col-md-6 col-xl-3 col-sm-12'>
+            <SingleProgram
+              img={filteredProgram.links.mission_patch_small}
+              key={filteredProgram.flight_number}
+              name={filteredProgram.mission_name}
+              missionid={filteredProgram.mission_id}
+              launchyear={filteredProgram.launch_year}
+              launch={filteredProgram.launch_success}
+              land={filteredProgram.rocket.first_stage.cores[0].land_success}
+            />
+          </div>
+        ));
+      }
     }
-    if(firstlandPrograms !== null && firstlandPrograms.length > 0){
-     years = firstlandPrograms.map(firstlandProgram => {
-      return firstlandProgram.launch_year
-     });
-     uniqueYears = years.filter((year, index) =>{
+    if (firstlandPrograms !== null && firstlandPrograms.length > 0) {
+      years = firstlandPrograms.map((firstlandProgram) => {
+        return firstlandProgram.launch_year;
+      });
+      uniqueYears = years.filter((year, index) => {
         return years.indexOf(year) == index;
-     })
-    
-     yearInfo = uniqueYears.map((year) => 
-       <div className='col-lg-6 col-xl-6 col-md-6 col-sm-6'>
-         <Link
-           to='#'
-           type='button'
-           onClick={() => this.launchYear(year)}
-           className='selected'
-         >
-           {year}
-         </Link>
-       </div>
-     )
-     //console.log(uniqueYears);
-    }       
+      });
+
+      yearInfo = uniqueYears.map((year) => (
+        <div className='col-lg-6 col-xl-6 col-md-6 col-sm-6'>
+          <button
+            onClick={() => this.onFilter(year, null, null)}
+            className='selected'
+          >
+            {year}
+          </button>
+        </div>
+      ));
+      //console.log(uniqueYears);
+    }
     return (
       <Fragment>
         <h2 style={{ marginLeft: "10px", marginTop: "0px" }}>
@@ -105,81 +203,8 @@ class Landing extends Component {
                 <hr />
               </p>
               <div className='row'>
-                <div className='buttons'>
-                  {yearInfo}
-                </div>
+                <div className='buttons'>{yearInfo}</div>
               </div>
-
-              {/* // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2007
-                  //   </Link>
-                  // </div>
-                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2008
-                  //   </Link>
-                  // </div>
-                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2009
-                  //   </Link>
-                  // </div>
-                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2010
-                  //   </Link>
-                  // </div>
-                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2011
-                  //   </Link>{" "}
-                  // </div>{" "}
-                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2012
-                  //   </Link>
-                  // </div>{" "}
-                  // <div className='col-lg-6 col-md-6 col-sm-6 col-xl-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2013
-                  //   </Link>
-                  // </div>
-                  // <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2014
-                  //   </Link>
-                  // </div>
-                  // <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2015
-                  //   </Link>
-                  // </div>
-                  // <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2016
-                  //   </Link>
-                  // </div>
-                  // <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2017
-                  //   </Link>
-                  // </div>
-                  // <div className='col-lg-6 col-md-6 col-xl-6 col-sm-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2018
-                  //   </Link>
-                  // </div>
-                  // <div className='col-lg-6 col-xl-6  col-md-6 col-sm-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2019
-                  //   </Link>
-                  // </div>
-                  // <div className='col-lg-6 col-xl-6 col-md-6 col-sm-6'>
-                  //   <Link to='#' type='button' className='selected'>
-                  //     2020
-                  //   </Link>
-                  // </div> */}
 
               <p
                 style={{
@@ -198,17 +223,23 @@ class Landing extends Component {
                     className='col-lg-6 col-xl-6 col-md-6 col-sm-6'
                     style={{ marginTop: "-5px" }}
                   >
-                    <Link to='#' type='button' className='selected'>
+                    <button
+                      onClick={() => this.onFilter(null, true, null)}
+                      className='selected'
+                    >
                       True
-                    </Link>
+                    </button>
                   </div>
                   <div
                     className='col-lg-6 col-xl-6 col-md-6 col-sm-6'
                     style={{ marginTop: "-5px", marginBottom: "5px" }}
                   >
-                    <Link to='#' type='button' className='selected'>
+                    <button
+                      onClick={() => this.onFilter(null, false, null)}
+                      className='selected'
+                    >
                       False
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -219,7 +250,7 @@ class Landing extends Component {
                   marginTop: "20px",
                 }}
               >
-                Succussful Landing
+                Successful Landing
                 <hr />
               </p>
               <div className='row'>
@@ -228,17 +259,23 @@ class Landing extends Component {
                     className='col-lg-6 col-xl-6 col-md-6 col-sm-6'
                     style={{ marginTop: "-5px" }}
                   >
-                    <Link to='#' type='button' className='selected'>
+                    <button
+                      onClick={() => this.onFilter(null, null, true)}
+                      className='selected'
+                    >
                       True
-                    </Link>
+                    </button>
                   </div>
                   <div
                     className='col-lg-6 col-xl-6 col-md-6 col-sm-6'
                     style={{ marginTop: "-5px" }}
                   >
-                    <Link to='#' type='button' className='selected'>
+                    <button
+                      onClick={() => this.onFilter(null, null, false)}
+                      className='selected'
+                    >
                       False
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -257,4 +294,6 @@ const mapStateToProps = (state) => ({
   firstLanding: state.firstLanding,
 });
 
-export default connect(mapStateToProps, { landingPage })(Landing);
+export default connect(mapStateToProps, { landingPage, filter })(Landing);
+
+              

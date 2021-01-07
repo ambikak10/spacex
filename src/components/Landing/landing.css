@@ -24,8 +24,8 @@ hr {
   width: 120px;
   margin-top: 2px;
 }
-a {
-  margin-bottom: 6px;
+button {
+  margin-bottom: 12px;
   background-color: rgb(197, 231, 133);
   border: transparent;
   border-radius: 3px;
@@ -49,8 +49,9 @@ a {
   padding-top: 2px;
   margin-left: -3px;
 }
- a:focus{
- background-color: rgb(115, 180, 9)
+ button:focus{
+ background-color: rgb(115, 180, 9);
+ outline:none;
 }
 .buttons {
   margin-left: 35px;

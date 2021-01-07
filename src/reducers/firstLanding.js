@@ -1,7 +1,8 @@
-import { SET_LANDING } from "../actions/types";
+import { SET_LANDING, GET_PROGRAMS } from "../actions/types";
 
 const initialState = {
   firstlandPrograms: null,
+  filteredPrograms: null
 };
 
 export default function (state = initialState, action) {
@@ -11,6 +12,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         firstlandPrograms: action.payload,
+      };
+    case GET_PROGRAMS:
+      return {
+        ...state,
+        filteredPrograms: action.payload,
       };
     default:
       return state;
