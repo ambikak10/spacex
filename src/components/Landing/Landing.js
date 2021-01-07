@@ -191,7 +191,7 @@ class Landing extends Component {
            {
              value2: value2,
              activeLandtrue: !this.state.activeLandtrue,
-             activeLandfalse: false,
+             activeLandfalse: null,
            },
            () => {
              callback();
@@ -207,7 +207,7 @@ class Landing extends Component {
              {
                value2: null,
                activeLandtrue: !this.state.activeLandtrue,
-               activeLandfalse: false,
+               activeLandfalse: null,
              },
              () => {
                callback();
@@ -222,7 +222,7 @@ class Landing extends Component {
              {
                value2: value2,
                activeLandtrue: true,
-               activeLandfalse: false,
+               activeLandfalse: null,
              },
              () => {
                callback();
@@ -240,7 +240,7 @@ class Landing extends Component {
            {
              value2: value2,
              activeLandfalse: !this.state.activeLandfalse,
-             activeLandtrue: false,
+             activeLandtrue: null,
            },
            () => {
              callback();
@@ -256,7 +256,7 @@ class Landing extends Component {
              {
                value2: null,
                activeLandfalse: !this.state.activeLandfalse,
-               activeLandtrue: false,
+               activeLandtrue: null,
              },
              () => {
                callback();
@@ -271,7 +271,7 @@ class Landing extends Component {
              {
                value2: value2,
                activeLandfalse: true,
-               activeLandtrue: false,
+               activeLandtrue: null,
              },
              () => {
                callback();
