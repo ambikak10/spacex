@@ -25,7 +25,7 @@ import axios from "axios";
  };
 //get programs based on filter
 export const filter = (year, value1, value2) => (dispatch) => {
-  console.log("inside filter");
+  // console.log("inside filter");
   var params = "";
   if (year) {
     params = params + "&launch_year=" + year;
@@ -36,18 +36,18 @@ export const filter = (year, value1, value2) => (dispatch) => {
   if (value2 !== null) {
     params = params + "&land_success=" + value2;
   }
- console.log(params);
+//  console.log(params);
   axios
     .get(`https://api.spaceXdata.com/v3/launches?limit=100${params}`)
     .then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       dispatch({
         type: GET_PROGRAMS,
         payload: res.data,
       });
     })
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
       dispatch({
         type: GET_PROGRAMS,
         payload: null,

@@ -9,7 +9,7 @@ class Landing extends Component {
   constructor() {
     super();
     this.state = {
-      filterApplied:false,
+      activeYear: false,
       img: null,
       name: null,
       missionid: null,
@@ -18,136 +18,318 @@ class Landing extends Component {
       land: null,
       value1: null, //launch boolean value
       value2: null, //land boolena value
+      activeLaunchtrue: false,
+      activeLaunchfalse: false,
+      activeLandtrue: false,
+      activeLandfalse: false,
+      activeClass: null
     };
   }
   componentDidMount = () => {
-    console.log('evertime')
     this.props.landingPage();
   };
-//  static getDerivedStateFromProps(props, state){
-//      props.filter(state.launchyear, state.value1, state.value2);
-//  }
-  onFilter = (year, value1, value2) => {
-    //console.log(year);
+
+  onFilter = (year, value1, value2, i) => {
     var params = "";
-    if (year !== null) {
-      //console.log('year clicked')
+
+    if (
+      year !== null &&
+      this.state.activeYear === false &&
+      year !== this.state.launchyear
+    ) {
       this.setState(
         {
           launchyear: year,
-          filterApplied: true
-        }, ()=>{
-          console.log('callback')
-        
-          if (this.state.launchyear !== null) {
-            console.log(this.state.launchyear);
-            params = params + "year=" + this.state.launchyear;
-          }
-
-          if (this.state.value1 !== null) {
-            console.log(this.state.value1);
-            params = params + "launch=" + this.state.value1;
-          }
-          if (this.state.value2 !== null) {
-            console.log(this.state.value2);
-            params = params + "land=" + this.state.value2;
-          }
-             window.history.replaceState(null, null, `/programs/${params}`);
-             this.props.filter(
-               this.state.launchyear,
-               this.state.value1,
-               this.state.value2
-             );
+          activeYear: !this.state.activeYear,
+          activeClass: i,
+        },
+        () => {
+          callback();
         }
       );
+    } else {
+      if (
+        year !== null &&
+        this.state.activeYear === true &&
+        year === this.state.launchyear
+      ) {
+        this.setState(
+          {
+            launchyear: null,
+            activeYear: !this.state.activeYear,
+            activeClass: i
+          },
+          () => {
+            callback();
+          }
+        );
+      } else if (
+        year !== null &&
+        this.state.activeYear === true &&
+        year !== this.state.launchyear
+      ) {
+        this.setState(
+          {
+            launchyear: year,
+            activeYear: true,
+            activeClass: i,
+          },
+          () => {
+            callback();
+          }
+        );
+      }
     }
-    if (value1 !== null) {
+
+    //value1
+    if (value1 === true){
+      if(value1 !== null &&
+      this.state.activeLaunchtrue === false &&
+      value1 !== this.state.value1
+    ) {
       this.setState(
         {
           value1: value1,
-          filterApplied: true,
+          activeLaunchtrue: !this.state.activeLaunchtrue,
+          activeLaunchfalse: false
         },
         () => {
-          //console.log(this.state.value1);
-          if (this.state.launchyear !== null) {
-            console.log(this.state.launchyear);
-            params = params + "year=" + this.state.launchyear;
-          }
-
-          if (this.state.value1 !== null) {
-            console.log(this.state.value1);
-            params = params + "launch=" + this.state.value1;
-          }
-          if (this.state.value2 !== null) {
-            console.log(this.state.value2);
-            params = params + "land=" + this.state.value2;
-          }
-          window.history.replaceState(null, null, `/programs/${params}`);
-          this.props.filter(
-            this.state.launchyear,
-            this.state.value1,
-            this.state.value2
-          );
+          callback();
         }
       );
+    } else {
+      if (
+        value1 !== null &&
+        this.state.activeLaunchtrue === true &&
+        value1 === this.state.value1
+      ) {
+        this.setState(
+          {
+            value1: null,
+            activeLaunchtrue: !this.state.activeLaunchtrue,
+            activeLaunchfalse: false,
+          },
+          () => {
+            callback();
+          }
+        );
+      } else if (
+        value1 !== null &&
+        this.state.activeLaunchtrue === true &&
+        value1 !== this.state.value1
+      ) {
+        this.setState(
+          {
+            value1: value1,
+            activeLaunchtrue: true,
+            activeLaunchfalse: false,
+          },
+          () => {
+            callback();
+          }
+        );
+      }
     }
-    if (value2 !== null) {
+  } else if(value1 === false){
+    if (
+      value1 !== null &&
+      this.state.activeLaunchfalse === false &&
+      value1 !== this.state.value1
+    ) {
       this.setState(
         {
-          value2: value2,
-          filterApplied: true,
+          value1: value1,
+          activeLaunchfalse: !this.state.activeLaunchfalse,
+          activeLaunchtrue: false,
         },
         () => {
-          if (this.state.launchyear !== null) {
-            console.log(this.state.launchyear);
-            params = params + "year=" + this.state.launchyear;
-          }
-
-          if (this.state.value1 !== null) {
-            console.log(this.state.value1);
-            params = params + "launch=" + this.state.value1;
-          }
-          if (this.state.value2 !== null) {
-            console.log(this.state.value2);
-            params = params + "land=" + this.state.value2;
-          }
-          window.history.replaceState(null, null, `/programs/${params}`);
-          this.props.filter(
-            this.state.launchyear,
-            this.state.value1,
-            this.state.value2
-          );
+          callback();
         }
       );
+    } else {
+      if (
+        value1 !== null &&
+        this.state.activeLaunchfalse === true &&
+        value1 === this.state.value1
+      ) {
+        this.setState(
+          {
+            value1: null,
+            activeLaunchfalse: !this.state.activeLaunchfalse,
+            activeLaunchtrue: false,
+          },
+          () => {
+            callback();
+          }
+        );
+      } else if (
+        value1 !== null &&
+        this.state.activeLaunchfalse === true &&
+        value1 !== this.state.value1
+      ) {
+        this.setState(
+          {
+            value1: value1,
+            activeLaunchfalse: true,
+            activeLaunchtrue: false,
+          },
+          () => {
+            callback();
+          }
+        );
+      }
     }
-    //  this.props.filter(this.state.launchyear, this.state.value1, this.state.value2);
   }
+  //value2
+     if (value2 === true) {
+       if (
+         value2 !== null &&
+         this.state.activeLandtrue === false &&
+         value2 !== this.state.value2
+       ) {
+         this.setState(
+           {
+             value2: value2,
+             activeLandtrue: !this.state.activeLandtrue,
+             activeLandfalse: false,
+           },
+           () => {
+             callback();
+           }
+         );
+       } else {
+         if (
+           value2 !== null &&
+           this.state.activeLandtrue === true &&
+           value2 === this.state.value2
+         ) {
+           this.setState(
+             {
+               value2: null,
+               activeLandtrue: !this.state.activeLandtrue,
+               activeLandfalse: false,
+             },
+             () => {
+               callback();
+             }
+           );
+         } else if (
+           value2 !== null &&
+           this.state.activeLandtrue === true &&
+           value2 !== this.state.value2
+         ) {
+           this.setState(
+             {
+               value2: value2,
+               activeLandtrue: true,
+               activeLandfalse: false,
+             },
+             () => {
+               callback();
+             }
+           );
+         }
+       }
+     } else if (value2 === false) {
+       if (
+         value2 !== null &&
+         this.state.activeLandfalse === false &&
+         value2 !== this.state.value2
+       ) {
+         this.setState(
+           {
+             value2: value2,
+             activeLandfalse: !this.state.activeLandfalse,
+             activeLandtrue: false,
+           },
+           () => {
+             callback();
+           }
+         );
+       } else {
+         if (
+           value2 !== null &&
+           this.state.activeLandfalse === true &&
+           value2 === this.state.value2
+         ) {
+           this.setState(
+             {
+               value2: null,
+               activeLandfalse: !this.state.activeLandfalse,
+               activeLandtrue: false,
+             },
+             () => {
+               callback();
+             }
+           );
+         } else if (
+           value2 !== null &&
+           this.state.activeLandfalse === true &&
+           value2 !== this.state.value2
+         ) {
+           this.setState(
+             {
+               value2: value2,
+               activeLandfalse: true,
+               activeLandtrue: false,
+             },
+             () => {
+               callback();
+             }
+           );
+         }
+       }
+     }
+    var callback = () => {
+      console.log(this.state.launchyear);
+      if (this.state.launchyear !== null) {
+        console.log("inside if");
+        params = params + "year=" + this.state.launchyear;
+      }
+
+      if (this.state.value1 !== null) {
+        //  console.log(this.state.value1);
+        params = params + "launch=" + this.state.value1;
+      }
+      if (this.state.value2 !== null) {
+        //  console.log(this.state.value2);
+        params = params + "land=" + this.state.value2;
+      }
+      console.log(params);
+      window.history.replaceState(null, null, `/${params}`);
+      this.props.filter(
+        this.state.launchyear,
+        this.state.value1,
+        this.state.value2
+      );
+    };
+  };
   render() {
-    console.log('render')
     let content;
     let yearInfo;
     let years;
     let uniqueYears;
     const { firstlandPrograms } = this.props.firstLanding;
     const { filteredPrograms } = this.props.firstLanding;
-    
-    if (filteredPrograms === null){
-    if (firstlandPrograms !== null && firstlandPrograms.length > 0) {
-      content = firstlandPrograms.map((firstlandProgram) => (
-        <div className='col-lg-3 col-md-6 col-xl-3 col-sm-12'>
-          <SingleProgram
-            img={firstlandProgram.links.mission_patch_small}
-            key={firstlandProgram.flight_number}
-            name={firstlandProgram.mission_name}
-            missionid={firstlandProgram.mission_id}
-            launchyear={firstlandProgram.launch_year}
-            launch={firstlandProgram.launch_success}
-            land={firstlandProgram.rocket.first_stage.cores[0].land_success}
-          />
-        </div>
-      ));
-    }} else {
-      if (filteredPrograms !== null && filteredPrograms.length > 0){
+
+    if (filteredPrograms === null) {
+      if (firstlandPrograms !== null && firstlandPrograms.length > 0) {
+        content = firstlandPrograms.map((firstlandProgram) => (
+          <div className='col-lg-3 col-md-6 col-xl-3 col-sm-12'>
+            <SingleProgram
+              img={firstlandProgram.links.mission_patch_small}
+              key={firstlandProgram.flight_number}
+              name={firstlandProgram.mission_name}
+              missionid={firstlandProgram.mission_id}
+              launchyear={firstlandProgram.launch_year}
+              launch={firstlandProgram.launch_success}
+              land={firstlandProgram.rocket.first_stage.cores[0].land_success}
+            />
+          </div>
+        ));
+      }
+    } else {
+      if (filteredPrograms !== null && filteredPrograms.length > 0) {
         content = filteredPrograms.map((filteredProgram) => (
           <div className='col-lg-3 col-md-6 col-xl-3 col-sm-12'>
             <SingleProgram
@@ -171,11 +353,11 @@ class Landing extends Component {
         return years.indexOf(year) == index;
       });
 
-      yearInfo = uniqueYears.map((year) => (
+      yearInfo = uniqueYears.map((year, index) => (
         <div className='col-lg-6 col-xl-6 col-md-6 col-sm-6'>
-          <button
-            onClick={() => this.onFilter(year, null, null)}
-            className='selected'
+          <button key={index}
+            onClick={() => this.onFilter(year, null, null, index)}
+            className={(index === this.state.activeClass) && this.state.activeYear && "selected"}
           >
             {year}
           </button>
@@ -224,8 +406,8 @@ class Landing extends Component {
                     style={{ marginTop: "-5px" }}
                   >
                     <button
-                      onClick={() => this.onFilter(null, true, null)}
-                      className='selected'
+                      onClick={() => this.onFilter(null, true, null, null)}
+                      className={this.state.activeLaunchtrue && "selected"}
                     >
                       True
                     </button>
@@ -235,8 +417,8 @@ class Landing extends Component {
                     style={{ marginTop: "-5px", marginBottom: "5px" }}
                   >
                     <button
-                      onClick={() => this.onFilter(null, false, null)}
-                      className='selected'
+                      onClick={() => this.onFilter(null, false, null, null)}
+                      className={this.state.activeLaunchfalse && "selected"}
                     >
                       False
                     </button>
@@ -260,8 +442,8 @@ class Landing extends Component {
                     style={{ marginTop: "-5px" }}
                   >
                     <button
-                      onClick={() => this.onFilter(null, null, true)}
-                      className='selected'
+                      onClick={() => this.onFilter(null, null, true, null)}
+                      className={this.state.activeLandtrue && "selected"}
                     >
                       True
                     </button>
@@ -271,8 +453,8 @@ class Landing extends Component {
                     style={{ marginTop: "-5px" }}
                   >
                     <button
-                      onClick={() => this.onFilter(null, null, false)}
-                      className='selected'
+                      onClick={() => this.onFilter(null, null, false, null)}
+                      className={this.state.activeLandfalse && "selected"}
                     >
                       False
                     </button>
@@ -295,5 +477,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { landingPage, filter })(Landing);
-
-              

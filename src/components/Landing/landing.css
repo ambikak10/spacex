@@ -50,6 +50,9 @@ button {
   margin-left: -3px;
 }
  button:focus{
+    outline:none;
+}
+ .selected{
  background-color: rgb(115, 180, 9);
  outline:none;
 }
