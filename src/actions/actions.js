@@ -9,14 +9,14 @@ import axios from "axios";
    axios
      .get("https://api.spaceXdata.com/v3/launches?limit=100")
      .then((res) => {
-       console.log(res.data)
+      //  console.log(res.data)
        dispatch({
         type: SET_LANDING,
         payload: res.data
       })
     })
      .catch((err) =>{
-     console.log(err)
+    //  console.log(err)
      dispatch({
         type: SET_LANDING,
         payload: null

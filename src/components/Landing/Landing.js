@@ -282,9 +282,9 @@ class Landing extends Component {
        }
      }
     var callback = () => {
-      console.log(this.state.launchyear);
+      // console.log(this.state.launchyear);
       if (this.state.launchyear !== null) {
-        console.log("inside if");
+        // console.log("inside if");
         params = params + "year=" + this.state.launchyear;
       }
 
@@ -296,7 +296,7 @@ class Landing extends Component {
         //  console.log(this.state.value2);
         params = params + "land=" + this.state.value2;
       }
-      console.log(params);
+      // console.log(params);
       window.history.replaceState(null, null, `/${params}`);
       this.props.filter(
         this.state.launchyear,
@@ -388,18 +388,21 @@ class Landing extends Component {
               <div className='row'>
                 <div className='buttons'>{yearInfo}</div>
               </div>
+              <div>
+                {" "}
+                <p
+                  style={{
+                    fontSize: "12px",
+                    textAlign: "center",
+                    marginTop: "20px",
+                    clear: "both",
+                  }}
+                >
+                  Successful Launch
+                  <hr />
+                </p>
+              </div>
 
-              <p
-                style={{
-                  fontSize: "12px",
-                  textAlign: "center",
-                  marginTop: "-10px",
-                  clear: "both",
-                }}
-              >
-                Successful Launch
-                <hr />
-              </p>
               <div className='row'>
                 <div className='buttons'>
                   <div
@@ -426,7 +429,7 @@ class Landing extends Component {
                   </div>
                 </div>
               </div>
-              <p
+              <div> <p
                 style={{
                   fontSize: "12px",
                   textAlign: "center",
@@ -435,7 +438,8 @@ class Landing extends Component {
               >
                 Successful Landing
                 <hr />
-              </p>
+              </p></div>
+             
               <div className='row'>
                 <div className='buttons'>
                   <div

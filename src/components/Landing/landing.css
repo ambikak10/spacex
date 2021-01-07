@@ -8,7 +8,7 @@
 }
 .selection-box {
   width: 200px;
-  height: 440px;
+  height: 480px;
   background-color: white;
   margin-left: 10px;
   border-radius: 5px;
@@ -59,6 +59,7 @@ button {
 .buttons {
   margin-left: 35px;
   margin-top: -5px;
+  margin-bottom: 20px;
 }
 .mission-patch {
   max-width:100%;
@@ -77,6 +78,13 @@ button {
   padding-right:-5px;
   margin-left: auto;
   margin-right:auto;
+}
+
+#successfullaunch {
+   font-size: 12px;
+   text-align: center;
+   margin-top: -10px;
+   clear: both;
 }
 /*********Large devices*********/
 @media (min-width: 1440px){

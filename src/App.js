@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { StaticRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import Landing from "./components/Landing/Landing";
@@ -26,8 +26,9 @@ function App() {
           /> */}
           <Route
             exact
-            path='/programs/:year?/:launch?/:land?' component = {Landing} />
-           
+            path='/programs/:year?/:launch?/:land?'
+            component={Landing}
+          />
         </Router>
       </div>
       <Footer />
