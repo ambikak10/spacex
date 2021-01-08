@@ -2,6 +2,7 @@
   "name": "spacex",
   "version": "0.1.0",
   "private": true,
+  "sideEffects": ["./src/components/Landing", "*.css"],
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
     "@babel/register": "^7.12.10",
@@ -45,7 +46,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.12.11",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
