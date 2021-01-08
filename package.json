@@ -2,8 +2,11 @@
   "name": "spacex",
   "version": "0.1.0",
   "private": true,
-  "main":"./server/index.js",
-  "sideEffects": ["./src/components/Landing", "*.css"],
+  "main": "./server/index.js",
+  "sideEffects": [
+    "./src/components/Landing",
+    "*.css"
+  ],
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
     "@babel/register": "^7.12.10",
