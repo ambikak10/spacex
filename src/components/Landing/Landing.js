@@ -10,12 +10,6 @@ class Landing extends Component {
     super();
     this.state = {
       activeYear: false,
-      // img: null,
-      // name: null,
-      // missionid: null,
-      // launchyear: null,
-      // launch: null,
-      // land: null,
       value1: null, //launch boolean value
       value2: null, //land boolena value
       activeLaunchtrue: false,
@@ -281,21 +275,16 @@ class Landing extends Component {
        }
      }
     var callback = () => {
-      // console.log(this.state.launchyear);
       if (this.state.launchyear !== null && this.state.launchyear !== undefined) {
-         console.log(this.state.launchyear);
         params = params + "year=" + this.state.launchyear;
       }
 
       if (this.state.value1 !== null) {
-        //  console.log(this.state.value1);
         params = params + "launch=" + this.state.value1;
       }
       if (this.state.value2 !== null) {
-        //  console.log(this.state.value2);
         params = params + "land=" + this.state.value2;
       }
-      console.log(params);
       window.history.replaceState(null, null, `/${params}`);
       this.props.filter(
         this.state.launchyear,
@@ -363,7 +352,6 @@ class Landing extends Component {
           </button>
         </div>
       ));
-      //console.log(uniqueYears);
     }
     return (
       <Fragment>
