@@ -18,10 +18,10 @@ class singleProgram extends Component {
           <div className='mission-patch-box'>
             <div>
               {" "}
-              <img className='mission-patch' src={img} />
+              <img alt="mission patch"className='mission-patch' src={img} />
             </div>
           </div>
-          <h4 id='mission-name'>{name}</h4>
+          <h4 class='mission-name'>{name}</h4>
           <span>
             <b id='details'>Mission Ids:</b>
           </span>

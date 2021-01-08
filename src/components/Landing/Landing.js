@@ -192,7 +192,7 @@ class Landing extends Component {
            {
              value2: value2,
              activeLandtrue: !this.state.activeLandtrue,
-             activeLandfalse: null,
+             activeLandfalse: false,
            },
            () => {
              callback();
@@ -208,7 +208,7 @@ class Landing extends Component {
              {
                value2: null,
                activeLandtrue: !this.state.activeLandtrue,
-               activeLandfalse: null,
+               activeLandfalse: false,
              },
              () => {
                callback();
@@ -223,7 +223,7 @@ class Landing extends Component {
              {
                value2: value2,
                activeLandtrue: true,
-               activeLandfalse: null,
+               activeLandfalse: false,
              },
              () => {
                callback();
@@ -233,7 +233,6 @@ class Landing extends Component {
        }
      } else if (value2 === false) {
        if (
-         value2 !== null &&
          this.state.activeLandfalse === false &&
          value2 !== this.state.value2
        ) {
@@ -241,7 +240,7 @@ class Landing extends Component {
            {
              value2: value2,
              activeLandfalse: !this.state.activeLandfalse,
-             activeLandtrue: null,
+             activeLandtrue: false,
            },
            () => {
              callback();
@@ -257,7 +256,7 @@ class Landing extends Component {
              {
                value2: null,
                activeLandfalse: !this.state.activeLandfalse,
-               activeLandtrue: null,
+               activeLandtrue: false,
              },
              () => {
                callback();
@@ -272,7 +271,7 @@ class Landing extends Component {
              {
                value2: value2,
                activeLandfalse: true,
-               activeLandtrue: null,
+               activeLandtrue: false,
              },
              () => {
                callback();
@@ -283,8 +282,8 @@ class Landing extends Component {
      }
     var callback = () => {
       // console.log(this.state.launchyear);
-      if (this.state.launchyear !== null) {
-        // console.log("inside if");
+      if (this.state.launchyear !== null && this.state.launchyear !== undefined) {
+         console.log(this.state.launchyear);
         params = params + "year=" + this.state.launchyear;
       }
 
@@ -296,7 +295,7 @@ class Landing extends Component {
         //  console.log(this.state.value2);
         params = params + "land=" + this.state.value2;
       }
-      // console.log(params);
+      console.log(params);
       window.history.replaceState(null, null, `/${params}`);
       this.props.filter(
         this.state.launchyear,
@@ -429,6 +428,8 @@ class Landing extends Component {
                   </div>
                 </div>
               </div>
+
+              
               <div> <p
                 style={{
                   fontSize: "12px",
