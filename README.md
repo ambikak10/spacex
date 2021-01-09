@@ -18,7 +18,7 @@ A front-end React application which displays the SpaceX Launch Programs from 3rd
 
 -Continous Integration(CI pipeline) through Heroku cloud platform
 
--Deployed in heroku 
+-Deployed in heroku (https://program-spacex.herokuapp.com/)
 
 
 # Getting Started with Create React App
