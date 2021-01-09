@@ -11,7 +11,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className='App-header'>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
           <Route exact path='/' component={Landing} />
         </Router>
       </div>
