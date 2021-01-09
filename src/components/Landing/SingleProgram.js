@@ -38,7 +38,7 @@ class singleProgram extends Component {
             <Fragment>
               {" "}
               <span style={{ marginLeft: "-10px", fontSize: "0.83em" }}>
-                NA
+                
               </span>
             </Fragment>
           )}
@@ -60,7 +60,7 @@ class singleProgram extends Component {
 
           {land === null ? (
             <div id='details'>
-              <b>Successful Landing:</b> <span>NA</span>
+              <b>Successful Landing:</b> <span>False</span>
             </div>
           ) : (
             <div id='details'>
