@@ -2,9 +2,9 @@ import React, { Component, Fragment } from "react";
 import { landingPage, filter } from "../../actions/actions";
 import "./landing.css";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import SingleProgram from "./SingleProgram";
-
+import loadable from "@loadable/component";
+// import SingleProgram from "./SingleProgram";
+const SingleProgram =loadable(()=> import('./SingleProgram'))
 class Landing extends Component {
   constructor() {
     super();

@@ -10,6 +10,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
     "@babel/register": "^7.12.10",
+    "@loadable/component": "^5.14.1",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
