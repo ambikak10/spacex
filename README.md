@@ -1,3 +1,26 @@
+A front-end React application which displays the SpaceX Launch Programs from 3rd party API.
+
+-Developed front end using React
+
+-Used Redux for state management
+
+-Express server for server side rendering
+
+-Made use of React class components and life cycle methods
+
+-UI is responsive
+
+-Multiple filters can be selected at the same time
+
+-Page updated dynamically based on filters
+
+-Webpack for bundling and babel used
+
+-Continous Integration(CI pipeline) through Heroku cloud platform
+
+-Deployed in heroku (https://program-spacex.herokuapp.com/)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
