@@ -60,7 +60,7 @@ class singleProgram extends Component {
 
           {land === null ? (
             <div id='details'>
-              <b>Successful Landing:</b> <span>False</span>
+              <b>Successful Landing:</b> <span>false</span>
             </div>
           ) : (
             <div id='details'>

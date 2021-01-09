@@ -6,88 +6,19 @@
   width: 100%;
   position: relative;
 }
-.selection-box {
-  width: 200px;
-  height: 500px;
-  background-color: white;
-  margin-left: 10px;
-  border-radius: 5px;
-  margin-top: -30px;
-}
-hr {
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px;
-  width: 120px;
-  margin-top: 2px;
-}
-button {
-  margin-bottom: 12px;
-  background-color: rgb(197, 231, 133);
-  border: transparent;
-  border-radius: 3px;
-  height: 20px;
-  width: 50px;
-  font: 400 13.3333px Arial;
-  appearance: button;
-  text-rendering: auto;
-  color: -internal-light-dark(black, white);
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: center;
-  align-items: flex-start;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-  padding-top: 2px;
-  margin-left: -3px;
-}
- button:focus{
-    outline:none;
-}
- .selected{
- background-color: rgb(115, 180, 9);
- outline:none;
-}
-.buttons {
-  margin-left: 35px;
-  margin-top: -5px;
-  margin-bottom: 20px;
-}
-.mission-patch {
-  max-width:100%;
-  max-height:100%;
-  background-color: #ececec;
-  margin-top:15px;
-  margin-bottom:15px;
-  margin-left: auto;
-  margin-right:auto;
-}
+
 .mission-patch-box {
   height: 190px;
-  width: 220px;
-  padding-top:5px;
-  padding-left:-5px;
-  padding-right:-5px;
+  width: 240px;
+  padding-top: 5px;
+  padding-left: -5px;
+  padding-right: -5px;
+  padding-bottom: 5px;
   margin-left: auto;
-  margin-right:auto;
-}
-
-#successfullaunch {
-   font-size: 12px;
-   text-align: center;
-   margin-top: -10px;
-   clear: both;
+  margin-right: auto;
 }
 /*********Large devices*********/
-@media (min-width: 1440px){
+@media (min-width: 1440px) {
   .col-xl-1,
   .col-xl-2,
   .col-xl-3,
@@ -149,28 +80,94 @@ button {
     width: 100%;
   }
   .program-card {
-  width: 260px;
-  height: 480px;
-  background-color: white;
-  margin-left: 10px;
-  border-radius: 5px;
-  margin-top: -15px;
-  margin-bottom: 30px;
-}
- .mission-name {
-  margin-top: 60px;
-  color: #0645ad;
-  margin-left:18px;
-  margin-bottom: 14px;
- }
+    width: 290px;
+    height: 480px;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    margin-top: -15px;
+    margin-bottom: 35px;
+  }
+  .mission-name {
+    margin-top: 80px;
+    color: #0645ad;
+    margin-left: 23px;
+    margin-bottom: 14px;
+  }
   #details {
-  margin: 18px;
-  font-size: 0.83em;
- }
+    margin: 23px;
+    font-size: 0.83em;
+    margin-top: 20px;
+  }
+  .mission-patch {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #ececec;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .selection-box {
+    width: 210px;
+    height: 500px;
+    background-color: white;
+    margin-left: 30px;
+    border-radius: 5px;
+    margin-top: -30px;
+  }
+  hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    width: 120px;
+    margin-top: 2px;
+  }
+  button {
+    margin-bottom: 12px;
+    background-color: rgb(197, 231, 133);
+    border: transparent;
+    border-radius: 3px;
+    height: 20px;
+    width: 50px;
+    font: 400 13.3333px Arial;
+    appearance: button;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    padding-top: 2px;
+    margin-left: -3px;
+  }
+  button:focus {
+    outline: none;
+  }
+  .selected {
+    background-color: rgb(115, 180, 9);
+    outline: none;
+  }
+  .buttons {
+    margin-left: 35px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+  }
 }
 
 /***********Desktop devices*********/
-@media (min-width: 1024px) and (max-width: 1440px){
+@media (min-width: 1024px) and (max-width: 1440px) {
   .col-lg-1,
   .col-lg-2,
   .col-lg-3,
@@ -232,34 +229,98 @@ button {
     width: 100%;
   }
   .program-card {
-  width: 200px;
-  height: 420px;
-  background-color: white;
-  margin-left: 90px;
-  border-radius: 5px;
-  margin-top: -15px;
-  margin-bottom: 30px;
-  margin-right: 90px;
-}
- .mission-name {
-  margin-top: 20px;
-  color: #0645ad;
-  margin-left:18px;
-  margin-bottom: 14px;
- }
- #details {
-  margin: 18px;
-  font-size: 0.83em;
-}
-.mission-patch-box {
-  height: 190px;
-  width: 170px;
-  padding-top:5px;
-  padding-left:-5px;
-  padding-right:-5px;
-  margin-left: auto;
-  margin-right:auto;
-}
+    width: 19vw;
+    height: 450px;
+    background-color: white;
+    margin-left: 70px;
+    border-radius: 5px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    margin-right: 90px;
+  }
+  .mission-name {
+    color: #0645ad;
+    margin-left: 25px;
+    margin-bottom: 14px;
+    margin-top: 54px;
+  }
+  #details {
+    margin: 23px;
+    font-size: 0.83em;
+  }
+  .mission-patch-box {
+    height: 25vh;
+    width: 80%;
+    padding-top: 10px;
+    /* padding-left:-5px;
+  padding-right:-5px; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mission-patch {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #ececec;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .selection-box {
+    width: 200px;
+    height: 500px;
+    background-color: white;
+    margin-left: 30px;
+    border-radius: 5px;
+    margin-top: -30px;
+  }
+  hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    width: 120px;
+    margin-top: 2px;
+  }
+  button {
+    margin-bottom: 12px;
+    background-color: rgb(197, 231, 133);
+    border: transparent;
+    border-radius: 3px;
+    height: 20px;
+    width: 50px;
+    font: 400 13.3333px Arial;
+    appearance: button;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    padding-top: 2px;
+    margin-left: -3px;
+  }
+  button:focus {
+    outline: none;
+  }
+  .selected {
+    background-color: rgb(115, 180, 9);
+    outline: none;
+  }
+  .buttons {
+    margin-left: 35px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+  }
 }
 /************Tablet View***********/
 @media (min-width: 700px) and (max-width: 1024px) {
@@ -324,33 +385,99 @@ button {
   .col-md-12 {
     width: 100%;
   }
-  .program-card{
-  width: 240px;
-  height: 480px;
-  background-color: white;
-  border-radius: 5px;
-  margin-top: -15px;
-  margin-bottom: 30px;
+  .selection-box {
+    width: 200px;
+    height: 500px;
+    background-color: white;
+    margin-left: 20px;
+    border-radius: 5px;
+    margin-top: -30px;
   }
-   .mission-name {
-  margin-top: 60px;
-  color: #0645ad;
-  margin-left:18px;
-  margin-bottom: 14px;
- }
+  hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    width: 120px;
+    margin-top: 2px;
+  }
+  button {
+    margin-bottom: 12px;
+    background-color: rgb(197, 231, 133);
+    border: transparent;
+    border-radius: 3px;
+    height: 20px;
+    width: 50px;
+    font: 400 13.3333px Arial;
+    appearance: button;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    padding-top: 2px;
+    margin-left: -3px;
+  }
+  button:focus {
+    outline: none;
+  }
+  .selected {
+    background-color: rgb(115, 180, 9);
+    outline: none;
+  }
+  .buttons {
+    margin-left: 35px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+  }
+  .program-card {
+    width: 30vw;
+    height: 480px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .mission-name {
+    margin-top: 100px;
+    color: #0645ad;
+    margin-left: 18px;
+    margin-bottom: 14px;
+  }
   #details {
-  margin: 18px;
-  font-size: 0.83em;
- }
-.mission-patch-box {
-  height: 190px;
-  width: 200px;
-  padding-top:5px;
-  padding-left:-5px;
-  padding-right:-5px;
-  margin-left: auto;
-  margin-right:auto;
-}
+    margin: 18px;
+    font-size: 0.83em;
+  }
+  .mission-patch-box {
+    height: 19vw;
+    width: 25vw;
+    padding-top: 5px;
+    padding-left: -5px;
+    padding-right: -5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mission-patch {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #ececec;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /***********Mobile devices*********/
@@ -417,54 +544,99 @@ button {
     width: 100%;
     text-align: center;
   }
-  h2{
-  text-align: center;
+  h2 {
+    text-align: center;
   }
-  .program-card{
-  width: 230px;
-  height: 420px;
-  background-color: white;
-  margin-left:auto;
-  margin-right:auto;
-  border-radius: 5px;
-  margin-top: 25px;
-  margin-bottom: 10px;
-  text-align: left;
+  .program-card {
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
   }
-  .buttons{
-    margin-left: 8px
+  .buttons {
+    margin-left: 8px;
   }
   .selection-box {
-  width: 230px;
-  height: 480px;
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5px;
-  margin-top: -10px;
-}
- .mission-name {
-  margin-top: 60px;
-  color: #0645ad;
-  margin-left:18px;
- }
+    width: 300px;
+    height: 490px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
   #details {
-  margin: 18px;
-  font-size: 0.83em;
- }
- .mission-patch-box {
-  height: 190px;
-  width: 190px;
-  padding-top:5px;
-  padding-left:-5px;
-  padding-right:-5px;
-  margin-left: auto;
-  margin-right:auto;
-}
+    margin: 23px;
+    font-size: 0.83em;
+  }
+  .mission-patch-box {
+    height: 190px;
+    width: 255px;
+    padding-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .mission-name {
-  margin-top: 30px;
-  color: #0645ad;
-  margin-left:18px;
-  margin-bottom: 14px;
- }
+    margin-top: 90px;
+    color: #0645ad;
+    margin-left: 23px;
+    margin-bottom: 14px;
+  }
+  hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    width: 120px;
+    margin-top: 2px;
+  }
+  button {
+    margin-bottom: 12px;
+    background-color: rgb(197, 231, 133);
+    border: transparent;
+    border-radius: 3px;
+    height: 28px;
+    width: 70px;
+    font: 400 13.3333px Arial;
+    appearance: button;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    padding-top: 2px;
+    margin-left: -3px;
+  }
+  button:focus {
+    outline: none;
+  }
+  .selected {
+    background-color: rgb(115, 180, 9);
+    outline: none;
+  }
+  .mission-patch {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #ececec;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
