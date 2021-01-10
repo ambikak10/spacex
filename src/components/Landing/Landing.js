@@ -4,7 +4,7 @@ import "./landing.css";
 import { connect } from "react-redux";
 import loadable from "@loadable/component";
 // import SingleProgram from "./SingleProgram";
-const SingleProgram =loadable(()=> import('./SingleProgram'))
+const SingleProgram = loadable(() => import("./SingleProgram"));
 class Landing extends Component {
   constructor() {
     super();
@@ -16,15 +16,15 @@ class Landing extends Component {
       activeLaunchfalse: false,
       activeLandtrue: false,
       activeLandfalse: false,
-      activeClass: null
+      activeClass: null,
     };
     this.onFilter = this.onFilter.bind(this);
   }
-  componentDidMount(){
+  componentDidMount() {
     this.props.landingPage();
   }
 
-  onFilter (year, value1, value2, i) {
+  onFilter(year, value1, value2, i) {
     var params = "";
 
     if (
@@ -52,7 +52,7 @@ class Landing extends Component {
           {
             launchyear: null,
             activeYear: !this.state.activeYear,
-            activeClass: i
+            activeClass: i,
           },
           () => {
             callback();
@@ -77,30 +77,15 @@ class Landing extends Component {
     }
 
     //value1
-    if (value1 === true){
-      if(value1 !== null &&
-      this.state.activeLaunchtrue === false &&
-      value1 !== this.state.value1
-    ) {
-      this.setState(
-        {
-          value1: value1,
-          activeLaunchtrue: !this.state.activeLaunchtrue,
-          activeLaunchfalse: false
-        },
-        () => {
-          callback();
-        }
-      );
-    } else {
+    if (value1 === true) {
       if (
         value1 !== null &&
-        this.state.activeLaunchtrue === true &&
-        value1 === this.state.value1
+        this.state.activeLaunchtrue === false &&
+        value1 !== this.state.value1
       ) {
         this.setState(
           {
-            value1: null,
+            value1: value1,
             activeLaunchtrue: !this.state.activeLaunchtrue,
             activeLaunchfalse: false,
           },
@@ -108,48 +93,48 @@ class Landing extends Component {
             callback();
           }
         );
-      } else if (
+      } else {
+        if (
+          value1 !== null &&
+          this.state.activeLaunchtrue === true &&
+          value1 === this.state.value1
+        ) {
+          this.setState(
+            {
+              value1: null,
+              activeLaunchtrue: !this.state.activeLaunchtrue,
+              activeLaunchfalse: false,
+            },
+            () => {
+              callback();
+            }
+          );
+        } else if (
+          value1 !== null &&
+          this.state.activeLaunchtrue === true &&
+          value1 !== this.state.value1
+        ) {
+          this.setState(
+            {
+              value1: value1,
+              activeLaunchtrue: true,
+              activeLaunchfalse: false,
+            },
+            () => {
+              callback();
+            }
+          );
+        }
+      }
+    } else if (value1 === false) {
+      if (
         value1 !== null &&
-        this.state.activeLaunchtrue === true &&
+        this.state.activeLaunchfalse === false &&
         value1 !== this.state.value1
       ) {
         this.setState(
           {
             value1: value1,
-            activeLaunchtrue: true,
-            activeLaunchfalse: false,
-          },
-          () => {
-            callback();
-          }
-        );
-      }
-    }
-  } else if(value1 === false){
-    if (
-      value1 !== null &&
-      this.state.activeLaunchfalse === false &&
-      value1 !== this.state.value1
-    ) {
-      this.setState(
-        {
-          value1: value1,
-          activeLaunchfalse: !this.state.activeLaunchfalse,
-          activeLaunchtrue: false,
-        },
-        () => {
-          callback();
-        }
-      );
-    } else {
-      if (
-        value1 !== null &&
-        this.state.activeLaunchfalse === true &&
-        value1 === this.state.value1
-      ) {
-        this.setState(
-          {
-            value1: null,
             activeLaunchfalse: !this.state.activeLaunchfalse,
             activeLaunchtrue: false,
           },
@@ -157,125 +142,144 @@ class Landing extends Component {
             callback();
           }
         );
-      } else if (
-        value1 !== null &&
-        this.state.activeLaunchfalse === true &&
-        value1 !== this.state.value1
+      } else {
+        if (
+          value1 !== null &&
+          this.state.activeLaunchfalse === true &&
+          value1 === this.state.value1
+        ) {
+          this.setState(
+            {
+              value1: null,
+              activeLaunchfalse: !this.state.activeLaunchfalse,
+              activeLaunchtrue: false,
+            },
+            () => {
+              callback();
+            }
+          );
+        } else if (
+          value1 !== null &&
+          this.state.activeLaunchfalse === true &&
+          value1 !== this.state.value1
+        ) {
+          this.setState(
+            {
+              value1: value1,
+              activeLaunchfalse: true,
+              activeLaunchtrue: false,
+            },
+            () => {
+              callback();
+            }
+          );
+        }
+      }
+    }
+    //value2
+    if (value2 === true) {
+      if (
+        value2 !== null &&
+        this.state.activeLandtrue === false &&
+        value2 !== this.state.value2
       ) {
         this.setState(
           {
-            value1: value1,
-            activeLaunchfalse: true,
-            activeLaunchtrue: false,
+            value2: value2,
+            activeLandtrue: !this.state.activeLandtrue,
+            activeLandfalse: false,
           },
           () => {
             callback();
           }
         );
+      } else {
+        if (
+          value2 !== null &&
+          this.state.activeLandtrue === true &&
+          value2 === this.state.value2
+        ) {
+          this.setState(
+            {
+              value2: null,
+              activeLandtrue: !this.state.activeLandtrue,
+              activeLandfalse: false,
+            },
+            () => {
+              callback();
+            }
+          );
+        } else if (
+          value2 !== null &&
+          this.state.activeLandtrue === true &&
+          value2 !== this.state.value2
+        ) {
+          this.setState(
+            {
+              value2: value2,
+              activeLandtrue: true,
+              activeLandfalse: false,
+            },
+            () => {
+              callback();
+            }
+          );
+        }
+      }
+    } else if (value2 === false) {
+      if (
+        this.state.activeLandfalse === false &&
+        value2 !== this.state.value2
+      ) {
+        this.setState(
+          {
+            value2: value2,
+            activeLandfalse: !this.state.activeLandfalse,
+            activeLandtrue: false,
+          },
+          () => {
+            callback();
+          }
+        );
+      } else {
+        if (
+          value2 !== null &&
+          this.state.activeLandfalse === true &&
+          value2 === this.state.value2
+        ) {
+          this.setState(
+            {
+              value2: null,
+              activeLandfalse: !this.state.activeLandfalse,
+              activeLandtrue: false,
+            },
+            () => {
+              callback();
+            }
+          );
+        } else if (
+          value2 !== null &&
+          this.state.activeLandfalse === true &&
+          value2 !== this.state.value2
+        ) {
+          this.setState(
+            {
+              value2: value2,
+              activeLandfalse: true,
+              activeLandtrue: false,
+            },
+            () => {
+              callback();
+            }
+          );
+        }
       }
     }
-  }
-  //value2
-     if (value2 === true) {
-       if (
-         value2 !== null &&
-         this.state.activeLandtrue === false &&
-         value2 !== this.state.value2
-       ) {
-         this.setState(
-           {
-             value2: value2,
-             activeLandtrue: !this.state.activeLandtrue,
-             activeLandfalse: false,
-           },
-           () => {
-             callback();
-           }
-         );
-       } else {
-         if (
-           value2 !== null &&
-           this.state.activeLandtrue === true &&
-           value2 === this.state.value2
-         ) {
-           this.setState(
-             {
-               value2: null,
-               activeLandtrue: !this.state.activeLandtrue,
-               activeLandfalse: false,
-             },
-             () => {
-               callback();
-             }
-           );
-         } else if (
-           value2 !== null &&
-           this.state.activeLandtrue === true &&
-           value2 !== this.state.value2
-         ) {
-           this.setState(
-             {
-               value2: value2,
-               activeLandtrue: true,
-               activeLandfalse: false,
-             },
-             () => {
-               callback();
-             }
-           );
-         }
-       }
-     } else if (value2 === false) {
-       if (
-         this.state.activeLandfalse === false &&
-         value2 !== this.state.value2
-       ) {
-         this.setState(
-           {
-             value2: value2,
-             activeLandfalse: !this.state.activeLandfalse,
-             activeLandtrue: false,
-           },
-           () => {
-             callback();
-           }
-         );
-       } else {
-         if (
-           value2 !== null &&
-           this.state.activeLandfalse === true &&
-           value2 === this.state.value2
-         ) {
-           this.setState(
-             {
-               value2: null,
-               activeLandfalse: !this.state.activeLandfalse,
-               activeLandtrue: false,
-             },
-             () => {
-               callback();
-             }
-           );
-         } else if (
-           value2 !== null &&
-           this.state.activeLandfalse === true &&
-           value2 !== this.state.value2
-         ) {
-           this.setState(
-             {
-               value2: value2,
-               activeLandfalse: true,
-               activeLandtrue: false,
-             },
-             () => {
-               callback();
-             }
-           );
-         }
-       }
-     }
     var callback = () => {
-      if (this.state.launchyear !== null && this.state.launchyear !== undefined) {
+      if (
+        this.state.launchyear !== null &&
+        this.state.launchyear !== undefined
+      ) {
         params = params + "year=" + this.state.launchyear;
       }
 
@@ -292,7 +296,7 @@ class Landing extends Component {
         this.state.value2
       );
     };
-  };
+  }
   render() {
     let content;
     let yearInfo;
@@ -344,9 +348,14 @@ class Landing extends Component {
 
       yearInfo = uniqueYears.map((year, index) => (
         <div className='col-lg-6 col-xl-6 col-md-6 col-sm-6'>
-          <button key={index}
+          <button
+            key={index}
             onClick={() => this.onFilter(year, null, null, index)}
-            className={(index === this.state.activeClass) && this.state.activeYear && "selected"}
+            className={
+              index === this.state.activeClass &&
+              this.state.activeYear &&
+              "selected"
+            }
           >
             {year}
           </button>
@@ -417,18 +426,20 @@ class Landing extends Component {
                 </div>
               </div>
 
-              
-              <div> <p
-                style={{
-                  fontSize: "12px",
-                  textAlign: "center",
-                  marginTop: "10px",
-                }}
-              >
-                Successful Landing
-                <hr />
-              </p></div>
-             
+              <div>
+                {" "}
+                <p
+                  style={{
+                    fontSize: "12px",
+                    textAlign: "center",
+                    marginTop: "10px",
+                  }}
+                >
+                  Successful Landing
+                  <hr />
+                </p>
+              </div>
+
               <div className='row'>
                 <div className='buttons'>
                   <div
