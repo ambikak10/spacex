@@ -5,6 +5,7 @@
   "main": "./server/index.js",
   "sideEffects": [
     "./src/components/Landing",
+    "./src/components/Landing/SingleProgram",
     "*.css"
   ],
   "dependencies": {
