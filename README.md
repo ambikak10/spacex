@@ -22,7 +22,6 @@ A front-end React application which displays the SpaceX Launch Programs from 3rd
 
 -Only used plain CSS, no bootstap.
 
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
