@@ -12,10 +12,9 @@ function App() {
     <Provider store={store}>
       <div className='App-header'>
         <Router>
-          {/* <Route exact path='/' component={Landing} /> */}
+          <Route exact path='/' component={Landing} />
           
         </Router>
-        <Landing />
       </div>
       <Footer />
     </Provider>
