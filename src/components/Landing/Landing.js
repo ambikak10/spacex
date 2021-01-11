@@ -28,14 +28,13 @@ class Landing extends Component {
     var params = "";
 
     if (
-      year !== null &&
-      this.state.activeYear === false &&
+      year !== null  &&
       year !== this.state.launchyear
-    ) {
+    ) { 
       this.setState(
         {
           launchyear: year,
-          activeYear: !this.state.activeYear,
+          activeYear: true,//!this.state.activeYear,
           activeClass: i,
         },
         () => {
@@ -44,8 +43,7 @@ class Landing extends Component {
       );
     } else {
       if (
-        year !== null &&
-        this.state.activeYear === true &&
+        year !== null  &&
         year === this.state.launchyear
       ) {
         this.setState(
@@ -58,22 +56,23 @@ class Landing extends Component {
             callback();
           }
         );
-      } else if (
-        year !== null &&
-        this.state.activeYear === true &&
-        year !== this.state.launchyear
-      ) {
-        this.setState(
-          {
-            launchyear: year,
-            activeYear: true,
-            activeClass: i,
-          },
-          () => {
-            callback();
-          }
-        );
       }
+      //  else if (
+      //   year !== null &&
+      //   this.state.activeYear === true &&
+      //   year !== this.state.launchyear
+      // ) {
+      //   this.setState(
+      //     {
+      //       launchyear: year,
+      //       activeYear: true,
+      //       activeClass: i,
+      //     },
+      //     () => {
+      //       callback();
+      //     }
+      //   );
+      // }
     }
 
     //value1

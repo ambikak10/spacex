@@ -4,10 +4,12 @@ const express = require("express");
 const React = require("react");
 const ReactDOMServer = require("react-dom/server");
 import App from "../src/App";
+var compression = require("compression");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
 const router = express.Router();
+app.use(compression());
 
 const serverRenderer = (req, res, next) => {
   fs.readFile(path.resolve("./build/index.html"), "utf8", (err, data) => {
