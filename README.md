@@ -20,6 +20,8 @@ A front-end React application which displays the SpaceX Launch Programs from 3rd
 
 -Deployed in heroku (https://program-spacex.herokuapp.com/)
 
+-No bootstrap or external CDN used, plain simple css is used.
+
 
 # Getting Started with Create React App
 
