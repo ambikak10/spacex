@@ -14,13 +14,13 @@ A front-end React application which displays the SpaceX Launch Programs from 3rd
 
 -Page updated dynamically based on filters
 
--Webpack for bundling and babel used
+-Webpack for bundling and babel for transpiling
 
 -Continous Integration(CI pipeline) through Heroku cloud platform
 
 -Deployed in heroku (https://program-spacex.herokuapp.com/)
 
--Only used plain CSS, no bootstap.
+-Only used plain CSS, no bootstrap.
 
 # Getting Started with Create React App
 
