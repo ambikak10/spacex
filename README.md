@@ -14,7 +14,7 @@ A front-end React application which displays the SpaceX Launch Programs from 3rd
 
 -Page updated dynamically based on filters
 
--Webpack for bundling and babel used
+-Webpack for bundling and babel for transpiling
 
 -Continous Integration(CI pipeline) through Heroku cloud platform
 
