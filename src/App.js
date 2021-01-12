@@ -10,12 +10,12 @@ import Footer from './components/Footer/Footer'
 function App() {
   return (
     <Provider store={store}>
-      <div className='App-header'>
+      {/* <div className='App-header'> */}
         <Router>
           <Route exact path='/' component={Landing} />
           
         </Router>
-      </div>
+      {/* </div> */}
       <Footer />
     </Provider>
   );

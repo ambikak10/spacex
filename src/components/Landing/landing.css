@@ -2,10 +2,7 @@
   box-sizing: border-box;
 }
 
-.row {
-  width: 100%;
-  position: relative;
-}
+
 
 .mission-patch-box {
   height: 190px;
@@ -164,6 +161,10 @@
     margin-top: -5px;
     margin-bottom: 20px;
   }
+  .row {
+  width: 100%;
+  position: relative;
+}
 }
 
 /***********Desktop devices*********/
