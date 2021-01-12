@@ -467,8 +467,8 @@ class Landing extends Component {
               </div>
             </section>
           </div>
-          <div className='col-lg-10 col-xl-10 col-md-8 col-sm-12'>
-            <div className='row'>{content}</div>
+          <div className='margin col-lg-10 col-xl-10 col-md-8 col-sm-12'>
+            <div className='row-program'>{content}</div>
           </div>
         </div>
       </Fragment>
