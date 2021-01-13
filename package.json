@@ -1,10 +1,5 @@
 {
   "name": "spacex",
-  "jest": {
-    "transform": {
-      "^.+\\.(js?)$": "babel-jest"
-    }
-  },
   "version": "0.1.0",
   "private": true,
   "main": "./server/index.js",
@@ -17,10 +12,10 @@
   "dependencies": {
     "@babel/register": "^7.12.10",
     "@loadable/component": "^5.14.1",
-    "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "ignore-styles": "^5.0.1",
@@ -35,7 +30,7 @@
   "scripts": {
     "start": "node server/index.js",
     "build": "webpack --mode production",
-    "test": "jest",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
@@ -61,17 +56,19 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@testing-library/jest-dom": "^5.11.9",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.2.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "html-webpack-plugin": "^4.5.1",
+    "redux-mock-store": "^1.5.4",
     "web-vitals": "^0.2.4",
-    "webpack": "^5.11.1",
+    "webpack": "^4.44.2",
     "webpack-cli": "^4.3.1",
-    "webpack-dev-server": "^3.11.1"
+    "webpack-dev-server": "^3.11.0"
   }
 }
