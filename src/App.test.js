@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders spacex', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/SpaceX Launch Programs/i);
   expect(linkElement).toBeInTheDocument();
 });

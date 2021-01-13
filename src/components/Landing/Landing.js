@@ -363,9 +363,9 @@ class Landing extends Component {
     }
     return (
       <Fragment>
-        <h2 style={{ marginLeft: "10px", marginTop: "0px" }}>
+        {/* <h2 style={{ marginLeft: "10px", marginTop: "0px" }}>
           SpaceX Launch Programs
-        </h2>
+        </h2> */}
         <div className='row'>
           <div className='col-lg-2 col-xl-2 col-md-4 col-sm-12'>
             <section className='selection-box'>

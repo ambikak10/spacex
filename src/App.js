@@ -11,11 +11,14 @@ function App() {
   return (
     <Provider store={store}>
       {/* <div className='App-header'> */}
-        <Router>
-          <Route exact path='/' component={Landing} />
-          
-        </Router>
+      <h2 style={{ marginLeft: "10px", marginTop: "0px" }}>
+        SpaceX Launch Programs
+      </h2>
+      {/* <Router>
+        <Route exact path='/' component={Landing} />
+      </Router> */}
       {/* </div> */}
+      <Landing/>
       <Footer />
     </Provider>
   );
